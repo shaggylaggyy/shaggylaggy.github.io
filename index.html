@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Hi, I'm <span class="highlight">Your Name</span> 👋</h1>
+      <h2><span id="typed"></span></h2>
+    </div>
+  </header>
+
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>I am a passionate Software Developer focused on building amazing web experiences and solving real-world problems with technology.</p>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://github.com/yourusername/project1" target="_blank">🚀 Project One</a></li>
+      <li><a href="https://github.com/yourusername/project2" target="_blank">🚀 Project Two</a></li>
+      <li><a href="https://github.com/yourusername/project3" target="_blank">🚀 Project Three</a></li>
+    </ul>
+  </section>
+
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <p>✨ JavaScript | Python | React | Node.js | Machine Learning</p>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+    <p>📧 Email: your.email@example.com</p>
+    <p>🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name. Built with ❤️</p>
+  </footer>
+
+<script>
+  var typed = new Typed('#typed', {
+    strings: ['a Developer.', 'a Designer.', 'a Creator.'],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true
+  });
+
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.3 };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('appear');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
